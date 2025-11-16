@@ -18,3 +18,9 @@ FROM employees AS e
 JOIN departments AS d ON d.id = e.department_id
 WHERE e.salary > (SELECT AVG(e3.salary) FROM employees AS e3 WHERE e3.department_id = e.department_id)
 ORDER BY d.name, e.salary DESC;
+
+SELECT city, COUNT(*) AS gold_customers
+FROM customers
+WHERE loyalty_level = 'Gold'
+GROUP BY city
+ORDER BY gold_customers DESC, city;
