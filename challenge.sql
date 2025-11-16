@@ -1,3 +1,5 @@
+-- Used SQLite and VSCode
+
 SELECT c.first_name || ' ' || c.last_name AS customer_name, SUM(oi.quantity * oi.unit_price) AS total_spend
 FROM customers AS c
 JOIN orders AS o ON o.customer_id = c.id
